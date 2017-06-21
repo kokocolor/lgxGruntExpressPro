@@ -1,0 +1,91 @@
+html:xt{% extends 'layout.html' %}
+{% block title %}My Page{% endblock %}
+{% block head %}
+{% parent %}
+    <!-- <link rel="stylesheet" href="custom.css"> -->
+    <!-- <link rel="stylesheet" href="./style/style.css"> -->
+    <script src="./script/pro.js"></script>
+{% endblock %}
+{% block content %}
+    <div class="pro">
+	    <div class="pro-top-menu">
+	    	<img src="./img/zhuozi.png" alt="" class="books-box">
+	    </div>
+	    <ul class="book-list">
+	    	<li style="background:rgb(255,255,255)">
+	    		<p><a href="#pc">pc</a></p>
+	    		
+	    	</li>
+	    	
+	    	
+	    	<li style="background:rgb(163,196,80)">
+	    	
+	    		<p><a href="#app">移动端</a></p>
+	    		
+	    	</li>
+	    	<li style="background:rgb(249,252,50)">
+	    		<p>游戏</p>
+	    		
+	    	</li>
+	    	<li style="background:rgb(240,160,48)">
+	    		<p>php</p>
+	    		
+	    	</li>
+	    	<li style="background:rgb(137,198,208)">
+	    		<p>其他</p>
+	    		
+	    	</li>
+	    	<li style="background:rgb(236,248,211)">
+	    		<p><a href="./aboutme">Me</a></p>
+	    		
+	    	</li>
+	    </ul>
+    	
+    	<div class="main-con">
+    		<div class="tem" id="pc">
+    			<h2><img src="./img/mi.gif" alt="">PC</h2>
+    			<ul class="ul">
+	    			<li>
+	    				<img src="./img/midnight.jpg" alt="">
+	    				<div class="cover">
+	    					技术：js+html这是什么呀打开的附件订单动脑筋思考； S打开；回到家卡萨丁黄金时间段长时间；收到js+html这是什么呀打开的附件订单动脑筋思考； S打开；回到家卡萨丁黄金时间段长时间；收到js+html这是什么呀打开的附件订单动脑筋思考； S打开；回到家卡萨丁黄金时间段长时间；收到js+html这是什么呀打开的附件订单动脑筋思考； S打开；回到家卡萨丁黄金时间段长时间；收到
+	    				</div>
+	    			</li>
+	    			<li></li>
+	    			<li></li>
+	    			<li></li>
+	    			<li></li>
+	    			<li></li>
+	    			<li></li>
+	    			<li></li>
+	    			<li></li>
+	    		</ul>
+
+    		</div>
+    		<div class="tem" id="app">
+    			<h2><img src="./img/mi.gif" alt="">移动端</h2>
+	    		<ul class="ul">
+	    			<li>1</li>
+	    			<li>2</li>
+	    			<li>3</li>
+	    			<li>4</li>
+	    			<li>5</li>
+	    			<li>5</li>
+	    			<li>6</li>
+	    			<li>7</li>
+	    			<li></li>
+	    			<li></li>
+	    			<li></li>
+	    			<li></li>
+	    			<li></li>
+	    			<li></li>
+	    			<li></li>
+	    			<li></li>
+	    		</ul>
+    		</div>
+    		
+    	</div>
+
+    	
+    </div>
+{% endblock %}

@@ -1,0 +1,456 @@
+/*引入*/
+@import "reset.css";
+/*变量*/
+@base: #c3c;
+@size:1px;
+@font:1px;
+html,body{
+	width:100%;
+	height:100%;
+	overflow:hidden;
+	background:#fff;
+
+	/*运算*/ 
+	font-size:@font*12;
+}
+
+#header{
+	width:100%;
+	height:50px;
+	position:absolute;
+	background:#c3c;
+	color:#fff;
+	top:0;
+	left:0;
+	z-index:123;
+}
+#footer{
+	width:100%;
+	height:100px;
+	position:absolute;
+	background:#c3c;
+	color:#fff;
+	bottom:0;
+	left:0;
+	z-index:123;
+}
+
+/*mixins*/
+.border(@borderWidth:1px){
+  border:@borderWidth solid #0099ff;
+  color: #0099ff;
+}
+.flex(@pos:center){
+	display:flex;
+	justify-content:@pos;
+	align-items:@pos;
+}
+/*嵌套*/
+ 
+.box{
+	width:100%;
+	height:100%;
+	overflow:hidden; 
+  	position:relative;
+  	.flex();
+	.star{
+		width:100%;
+		height:100%;
+		display:block;
+		position:absolute;
+  		top:0;
+  		left:0;
+  		z-index:3;
+
+	}
+  	.main{
+  		width:100%;
+		height:100%;
+		overflow:hidden;
+		position:relative;
+		 
+	  	.bg{
+	  		position:absolute;
+	  		top:0;
+	  		left:0;
+	  		z-index:1;
+
+	  		width:300%;
+			height:100%;
+			overflow:hidden;
+			animation:move 18s linear 0s infinite;
+			-webkit-animation:move 18s linear infinite;
+
+			#canvas{
+				width:100%;
+				height:120%;
+
+			}
+			
+
+
+
+	  	}
+	  	
+  	}
+}
+
+
+.img{
+	width: @size*120;
+    height: @size*120;
+    display: block;
+    position: absolute;
+    top: 18%;
+    left: 50%;
+    margin-left: -60px;
+    z-index: 2;
+
+}
+.show-title{
+	width:80%;
+	line-height:70px;
+	border-top:@size dotted #fff;
+	border-bottom:@size dotted #fff;
+	text-align:center;
+	font-size:@font*25px;
+	color:#fff;
+	position: absolute;
+    bottom: 28%;
+    left: 10%; 
+    z-index: 2;
+    font-weight: bolder;
+    transition:all 0.5s ease-in-out 0s;
+    -webkit-transition:all 0.5s ease-in-out 0s;
+
+}
+.arrow{
+	width: @size*50;
+    height: @size*50;
+    display: block;
+    position: absolute;
+    bottom: 60px;
+    left: 50%;
+    margin-left: -25px;
+    z-index: 2;
+    transform:rotate(180deg);
+    -webkit-transform:rotate(180deg);
+    animation:arrow 1s ease-in-out 0s infinite;
+	-webkit-animation:arrow 1s ease-in-out infinite;
+
+}
+.design{
+	width: @size*100;
+    line-height: @size*30;
+    text-align:center; 
+    display: block;
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    margin-left: -50px;
+    z-index: 2;
+    font-size:@size*12;
+    color:yellow;
+
+}
+
+@media screen and (min-width: 800px) {
+	.show-title {
+	    width: 50%;
+	    left:25%;
+	  }
+
+}
+
+@keyframes arrow{
+	0%{
+		bottom:60px;
+
+	}
+	 
+	100%{
+		bottom:30px;
+
+	}
+}
+@-webkit-keyframes arrow{
+	0%{
+		bottom:60px;
+
+	}
+	 
+	100%{
+		bottom:30px;
+
+	}
+}
+@keyframes move{
+	0%{
+		transform:translateX(0);
+
+	}
+	50%{
+		transform:translateX(-50%);
+
+	}
+	100%{
+		transform:translateX(0);
+
+	}
+}
+@-webkit-keyframes move{
+	0%{
+		transform:translateX(0);
+
+	}
+	50%{
+		transform:translateX(-50%);
+
+	}
+	100%{
+		transform:translateX(0);
+
+	}
+}
+
+/*pro页面*/
+.pro{
+	width:100%;
+	height:100%;
+	overflow:auto;
+	background:#FFC125;
+	position:relative; 
+	padding-bottom:10px;
+	 
+	.pro-top-menu{
+		width:100%;
+		height:70px;
+		position:absolute; 
+		top:125px;
+		left:0;
+		z-index:1;
+		.books-box{
+			width:100%;
+			height:100%;
+			display:block;
+
+
+		}
+
+	}
+	.book-list{
+		position:absolute; 
+		top:45px;
+		left:0;
+		z-index:1;
+		width:100%;
+		height:100px;
+		padding-left:7%;
+		padding-right:7%;
+		display:flex;
+		justify-content:space-around;
+		font-size:16px;
+		  
+		li{ 
+			width:11%;
+			height:100px;
+			overflow:hidden;
+			display:flex;
+			justify-content:flex-end;
+			align-items:center; 
+			box-shadow:0 3px 5px rgba(0,0,0,0.5);
+			border-top-right-radius:4px;
+			border-bottom-right-radius:4px;
+			border-top-left-radius:2px;
+			border-bottom-left-radius:2px;
+			transform-origin:20px top;
+			cursor:pointer;
+
+			p{
+				.flex(center); 
+				width:93%; 
+				height:100%; 
+				box-shadow:0 3px 5px rgba(0,0,0,0.5),-3px 0 7px rgba(0,0,0,0.3);
+				background:inherit;
+				 
+
+			}
+		}
+	}
+	.main-con{
+		width:99%;
+		height:460px;
+		overflow:auto;  
+		border-radius:5px;
+		background:transparent;
+		box-shadow:0 0 18px rgba(0,0,0,0.3);
+		margin:0 auto;
+		margin-top:200px;
+		.tem{
+			width:100%;
+			height:auto;
+			overflow:hidden;
+			
+			h2{
+				width:200px;
+				line-height:60px;
+				text-align:center;
+				font-size:20px;
+				color:#fff;
+				font-weight:900; 
+				margin:0 auto;
+				.flex(center);
+				img{
+					width:50px;
+					height:50px;
+					margin-right:6px;
+
+				}
+
+			}
+			.ul{
+				width:100%;
+				height:auto;
+				overflow:hidden;
+				display:flex;
+				justify-content:flex-start;
+				align-items:flex-start;
+				flex-wrap:wrap;
+				padding-top:10px;
+				padding-bottom:10px;
+
+				li{
+					width:17%;
+					height:260px;
+					overflow:hidden;
+					border:1px solid #fff;
+					margin:10px 1.5%;
+					margin-bottom:30px;  
+					transition:all 0.3s ease-in-out 0s;
+					-webkit-transition:all 0.3s ease-in-out 0s;
+					position:relative;
+					border-radius:6px;
+					img{
+						width:100%;
+						height:100%;
+
+					}
+					.cover{
+						width:100%;
+						height:40%;
+						line-height:20px;
+						overflow:auto;
+						position:absolute;
+						bottom:0;
+						left:0;
+						z-index:1;
+						background:rgba(0,0,0,0.6);
+						color:#ccc; 
+						padding:10px;
+						font-size:12px;
+
+					}
+
+				}
+
+			}
+		}
+	}
+}
+.yoy{
+ 	animation:run 0.8s ease both;
+	-webkit-animation:run 0.8s ease both;
+	
+}
+@keyframes run{
+	0%{
+		transform:rotate(0deg);
+
+	}
+	25%{
+		transform:rotate(6deg);
+
+	}
+	50%{
+		transform:rotate(-3deg);
+
+	}
+	75%{
+		transform:rotate(4deg);
+
+	}
+	 
+	 
+	100%{
+		transform:rotate(0deg);
+
+	}
+}
+@-webkit-keyframes run{
+	0%{
+		transform:rotate(0deg);
+
+	}
+	25%{
+		transform:rotate(6deg);
+
+	}
+	50%{
+		transform:rotate(-3deg);
+
+	}
+	75%{
+		transform:rotate(4deg);
+
+	}
+	 
+	 
+	100%{
+		transform:rotate(0deg);
+
+	}
+}
+
+@media screen and (max-width:800px){
+
+	.pro .pro-top-menu{
+		top:80px;
+	}
+	.pro .book-list{
+		top:45px;
+	}
+
+	.pro .book-list li{
+		width:15%;
+		height:60px!important;
+		 
+	}
+	.pro .book-list li p{
+		font-size:12px;
+		 
+	}
+	.main-con{
+		margin-top:160px!important;
+		height:390px!important;
+	}
+	.main-con .ul{
+		padding:10px;
+	}
+	.main-con .ul li{
+		width:47%!important;
+		height:180px;
+	}
+}
+
+@media screen and (min-width:1200px){
+	 .pro .pro-top-menu{
+	 	width:1000px;
+	 	left:50%;
+	 	margin-left:-500px;
+	 }
+	 .pro .book-list{
+	 	width:1000px;
+	 	left:50%;
+	 	margin-left:-500px;
+	 }
+}

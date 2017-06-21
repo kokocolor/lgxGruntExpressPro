@@ -1,0 +1,3 @@
+/*! lgxexpress 2017-06-21 */
+
+function changes(){for(var t=document.getElementById("canvas"),a=t.getContext("2d"),n=a.getImageData(0,0,t.width,t.height),e=0;e<n.data.length;e+=4)n.data[e]=n.data[e]-30,n.data[e+1]=n.data[e+1]-70,n.data[e+2]=n.data[e+2]-120,n.data[e+3]=255;a.putImageData(n,0,0)}var img=new Image;img.onload=function(){var t=document.getElementById("canvas");t.getContext("2d").drawImage(img,0,0,t.width,t.height);t.toDataURL("image/png")},img.crossOrigin="Anonymous",img.src="../img/midnight.jpg",$(function(){var t=0;$("body").click(function(){changes()}),$(".design").click(function(){0==t?(t=1,$(this).text("Tel:15210827137")):(t=0,$(this).text("设计者:故乡"))})});

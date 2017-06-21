@@ -1,0 +1,48 @@
+
+html:xt{% extends 'layout.html' %}
+{% block title %}My Page{% endblock %}
+{% block head %}
+{% parent %}
+	<link rel="stylesheet" href="./style/me.css">
+	<script src="./script/me.js"></script>
+{% endblock %}
+{% block content %}
+	<div class="content">
+		<div class="contenter">
+			<span class="flower_bg flower_top"></span>
+			<span class="flower_bg flower_bleft"></span>
+			<span class="flower_bg flower_bright"></span>
+			<div class="contacts">
+				<div class="detail">
+					<div class="detail_list">
+						<h3>李故乡</h3>
+						<h4>web前端工程师</h4>
+						<p>华北水利水电大学----本科</p>
+						<p>28岁</p>
+					</div>
+				</div>
+				<div class="contact_list">
+					<img src="./img/wo.png" alt="" class="wo">
+					<h3>联系方式</h3>
+					<ul>
+						<li class="email"><a href="mailto:2568936548@qq.com">邮箱:2568936548@qq.com</a></li> 
+						<li class="phone_num">微信:</li>
+						 
+					</ul>
+				</div>
+			</div>
+			<div class="text">
+				<h3><span>自我评价</span></h3>
+				<div class="part">
+					<ul class="self_evalue">
+						<li>喜欢与计算机相关的事物，对IT行业充满兴趣，并密切关注互联网前沿的一些技术。</li>
+						<li>工作细心，负责，喜欢有计划的开展工作，擅长于团队合作，适应力强，抗压能力好。</li>
+						<li>自学能力强，持之以恒，喜挑战未知，好钻研创新。</li>
+						<li>生活充满激情，为人随和、幽默、大度，乐于分享，乐于交流，服从大局。</li>
+					</ul>
+				</div>
+				 
+			</div>
+		</div>
+	</div>
+{% endblock %}
